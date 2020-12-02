@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    container_name: cake-sns-web
+    build:
+      context: .
+      dockerfile: ./Docker/php/Dockerfile
+    volumes:
+      - .:/var/www/html:cached
+    environment:
+      - APP_DEFAULT_LOCALE=ja_JP
+      - APP_DEFAULT_TIMEZONE=Asia/Tokyo
+    ports:
+      - "8000:80"
+      
